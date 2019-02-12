@@ -21,22 +21,19 @@ public class Main
 {
     public static void  main(String [] args) throws MetaException,MalformedURLException,IOException
     {
-        System.setProperty("java.security.krb5.conf", "/Users/ragraw1/kerberos/dev17/krb5.conf");
+        System.setProperty("java.security.krb5.conf", "/etc/krb5.conf");
 
         Configuration configuration = new Configuration();
         configuration.set("hadoop.security.authentication", "kerberos");
-        configuration.addResource("/Users/ragraw1/kerberos/dev17/hdfs-site.xml");
+        configuration.addResource("/etc/hdfs-site.xml");
 
         UserGroupInformation.setConfiguration(configuration);
         UserGroupInformation.loginUserFromKeytab("ragraw1"+"@"+
-                        "HADOOP_DEV17.WAL-MART.COM",
-                "/Users/ragraw1/kerberos/.ragraw1.keytab");
+                        "<Realm>",
+                "/etc/.ragraw1.keytab");
 
         HiveConf hiveConf = new HiveConf(SessionState.class);
-        hiveConf.addResource(new Path("/Users/ragraw1/kerberos/dev17/hive-site.xml"));
-
-        //hiveConf.setVar(HiveConf.ConfVars.METASTOREURIS, "thrift://tstr400080.srvdev1.sdc.wal-mart.com:9083,thrift://tstr400186.wal-mart.com:9083");
-        //hiveConf.setVar(HiveConf.ConfVars.HIVE_SERVER2_AUTHENTICATION, "KERBEROS");
+        hiveConf.addResource(new Path("/etc/hive-site.xml"));
 
         HiveMetaStoreClient hiveMetaStoreClient = new HiveMetaStoreClient(hiveConf);
 
