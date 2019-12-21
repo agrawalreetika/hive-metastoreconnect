@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/hivemetatore-connect.iml" filepath="$PROJECT_DIR$/hivemetatore-connect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hivemetastoreclient.iml" filepath="$PROJECT_DIR$/hivemetastoreclient.iml" />
     </modules>
   </component>
 </project>
