@@ -41,6 +41,5 @@ public class Main
         System.out.println(hiveMetaStoreClient.getAllTables("ragraw1"));
         hiveMetaStoreClient.close();
     }
-
 }
 
