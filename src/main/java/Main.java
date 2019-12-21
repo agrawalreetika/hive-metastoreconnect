@@ -39,9 +39,8 @@ public class Main
 
         System.out.println("Metastore client : " + hiveMetaStoreClient);
         System.out.println(hiveMetaStoreClient.getAllTables("ragraw1"));
-
+        
         hiveMetaStoreClient.close();
     }
-
 }
 
